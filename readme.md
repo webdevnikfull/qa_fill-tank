@@ -1,33 +1,27 @@
-# QA Fill tank ([uk](readme.uk.md))
+# ⛽ QA Fill Tank: Automated Refueling Logic Validation
 
-Mate Royal Oil decided to completely automate the refueling process.
+> ### A comprehensive unit testing suite built with **Jest** to validate the core business logic of the "Mate Royal Oil" automated refueling system.
 
-Write tests for `fillTank` function that takes a `customer` object, `fuelPrice`
-per 1 liter and `amount` of fuel the customer wants to buy.
-
-`customer` object contains the next props:
-
-```js
-customer = {
-  money: 3000, // customer account balance
-  vehicle {
-    maxTankCapacity: 40, // fuel tank volume
-    fuelRemains: 8, // Remaining fuel in the tank
-  }
-}
-```
-
-The function should return nothing, but only refills fuel and withdraws money,
-following the next rules:
-
-- If the `amount` is not given, then full tank is ordered.
-- If the `amount` is greater than the tank can accommodate, pour only what will fit.
-- ALWAYS fill in only what the client can pay.
-- Round the poured amount by discarding number to the tenth part.
-- If the poured amount is less than 2 liters, do not pour at all.
-- Round the price of the purchased fuel the to the nearest hundredth part.
+This repository serves as a professional showcase of **Software Quality Assurance (QA) and Unit Testing** practices in JavaScript. It demonstrates how to translate complex business requirements into robust, automated test cases using techniques like Boundary Value Analysis (BVA) and Equivalence Class Partitioning (ECP).
 
 ---
 
-- [Guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md);
-- Read more about [Jest expectations](https://jestjs.io/uk/docs/expect).
+## 🎯 Project Overview
+
+The objective of this project is to test the `fillTank` function. This function handles the automated refueling transaction, calculating how much fuel to dispense and how much money to withdraw from the customer's account based on dynamic constraints.
+
+### The System Under Test (SUT)
+The `fillTank` function accepts three parameters:
+1. `customer` (Object) - Contains account balance and vehicle details.
+2. `fuelPrice` (Number) - The price per 1 liter of fuel.
+3. `amount` (Number, Optional) - The requested amount of fuel.
+
+**Customer Object Structure:**
+```javascript
+const customer = {
+  money: 3000, // Account balance
+  vehicle: {
+    maxTankCapacity: 40, // Maximum fuel tank volume
+    fuelRemains: 8,      // Current fuel in the tank
+  }
+}
