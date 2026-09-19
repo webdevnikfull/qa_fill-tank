@@ -1,27 +1,45 @@
-# ⛽ QA Fill Tank: Automated Refueling Logic Validation
+# 🧪 QA Portfolio: Tank Filling Algorithm & Unit Testing
 
-> ### A comprehensive unit testing suite built with **Jest** to validate the core business logic of the "Mate Royal Oil" automated refueling system.
+> **About this repository:** This project focuses on the foundation of the Agile Testing Pyramid: **Unit Testing**. It demonstrates how to validate core mathematical and logical algorithms (calculating time or operations required to fill a tank) using automated unit tests, static analysis, and continuous integration.
 
-This repository serves as a professional showcase of **Software Quality Assurance (QA) and Unit Testing** practices in JavaScript. It demonstrates how to translate complex business requirements into robust, automated test cases using techniques like Boundary Value Analysis (BVA) and Equivalence Class Partitioning (ECP).
-
----
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Unit Testing](https://img.shields.io/badge/-Unit_Testing-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![ESLint](https://img.shields.io/badge/-Static_Analysis-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/-CI/CD-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
 ## 🎯 Project Overview
 
-The objective of this project is to test the `fillTank` function. This function handles the automated refueling transaction, calculating how much fuel to dispense and how much money to withdraw from the customer's account based on dynamic constraints.
+This repository contains a specialized JavaScript utility function designed to compute tank-filling metrics based on flow rates and capacity parameters (`src/fillTank.js`). 
 
-### The System Under Test (SUT)
-The `fillTank` function accepts three parameters:
-1. `customer` (Object) - Contains account balance and vehicle details.
-2. `fuelPrice` (Number) - The price per 1 liter of fuel.
-3. `amount` (Number, Optional) - The requested amount of fuel.
+As a **QA Automation Engineer**, my objective in this project is to ensure the algorithmic logic behaves predictably by writing and maintaining comprehensive unit tests (`src/fillTank.test.js`) that cover standard use cases, boundary values, and edge conditions directly at the code level.
 
-**Customer Object Structure:**
-```javascript
-const customer = {
-  money: 3000, // Account balance
-  vehicle: {
-    maxTankCapacity: 40, // Maximum fuel tank volume
-    fuelRemains: 8,      // Current fuel in the tank
-  }
-}
+## 🛠️ QA Tech Stack & Tools
+
+* **Testing Level:** Unit Testing (White-Box Testing)
+* **CI/CD Pipeline:** GitHub Actions (Automated test execution on every push/PR)
+* **Static Code Analysis (Shift-Left QA):** ESLint
+* **Core Language:** JavaScript (ES6+)
+
+## 📊 Test Strategy & Coverage
+
+The testing strategy is engineered to isolate and tightly validate the algorithmic business logic:
+
+### 1. Unit Testing (Code Level Validation)
+Located in `src/fillTank.test.js`, the automated test suite verifies:
+* Correct mathematical calculation of filling time/capacity under normal conditions.
+* Robust handling of edge cases (e.g., zero flow rate, already full tanks, extreme capacities).
+* Data integrity and deterministic return formats.
+
+### 2. Continuous Integration (CI/CD)
+The project is seamlessly integrated with GitHub Actions (`.github/workflows/test.yml`). Every commit automatically triggers a pipeline that:
+* Runs `ESLint` to catch syntax, logic, and style errors early in the development lifecycle.
+* Executes the full unit test suite to prevent regressions from reaching production.
+
+## 🚀 How to Run the Tests Locally
+
+To evaluate the unit tests and static analysis tools on your local machine, follow these steps:
+
+### 1. Environment Setup
+Clone the repository and install the required Node.js dependencies:
+```bash
+npm install
